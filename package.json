@@ -1,0 +1,19 @@
+{
+  "name": "dat-stream-deck",
+  "version": "0.1.0",
+  "description": "Open-source stream deck for OBS Studio and Streamlabs OBS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sohnojam/dat-stream-deck.git"
+  },
+  "author": "João \"SohnoJam\" Moraes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sohnojam/dat-stream-deck/issues"
+  },
+  "homepage": "https://github.com/sohnojam/dat-stream-deck#readme"
+}
