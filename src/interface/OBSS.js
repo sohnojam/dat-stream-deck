@@ -38,11 +38,12 @@ class OBSS {
       address: this.config.obss.address,
       password: this.config.obss.password,
       secure: false
-    }).then(() => {
-      this.controller.setState('main')
-    }).catch(error => {
-      console.error(error)
     })
+      .then(() => {
+        this.controller.setState('main')
+      }).catch(error => {
+        console.error(error)
+      })
   }
 
   switchScene(sceneName) {
