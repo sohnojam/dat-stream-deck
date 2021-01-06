@@ -51,6 +51,14 @@ class Key {
           this.controller.switchState(action.stateName)
           break
         }
+        case 'storeCurrentScene': {
+          this.controller.currentState.storeSceneName(this.controller.interface.getCurrentScene())
+          break
+        }
+        case 'dropCurrentScene': {
+          this.controller.currentState.dropSceneName()
+          break
+        }
       }
     })
   }
