@@ -1,0 +1,191 @@
+{
+  "controller": {
+    "initStateName": "init"
+  },
+  "interface": {
+    "type": "",
+    "address": "",
+    "token": ""
+  },
+  "states": [
+    {
+      "name": "init",
+      "keys": [
+        {
+          "keyData": {
+            "key": {
+              "name": "q"
+            },
+            "ch": "q"
+          },
+          "actions": [
+            {
+              "type": "connect",
+              "startStateName": "main"
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "w"
+            },
+            "ch": "w"
+          },
+          "actions": [
+            {
+              "type": "exit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "main",
+      "keys": [
+        {
+          "keyData": {
+            "key": {
+              "name": "q"
+            },
+            "ch": "q"
+          },
+          "actions": [
+            {
+              "type": "switchScene",
+              "sceneName": ""
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "w"
+            },
+            "ch": "w"
+          },
+          "actions": [
+            {
+              "type": "switchScene",
+              "sceneName": ""
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "e"
+            },
+            "ch": "e"
+          },
+          "actions": [
+            {
+              "type": "setSourceMute",
+              "sourceName": "",
+              "mute": true
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "r"
+            },
+            "ch": "r"
+          },
+          "actions": [
+            {
+              "type": "setSourceMute",
+              "sourceName": "",
+              "mute": false
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "t"
+            },
+            "ch": "t"
+          },
+          "actions": [
+            {
+              "type": "setSourceVisibility",
+              "sceneName": "",
+              "sourceName": "",
+              "visible": false
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "y"
+            },
+            "ch": "y"
+          },
+          "actions": [
+            {
+              "type": "setSourceVisibility",
+              "sceneName": "",
+              "sourceName": "",
+              "visible": true
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "u"
+            },
+            "ch": "u"
+          },
+          "actions": [
+            {
+              "type": "storeCurrentScene"
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "i"
+            },
+            "ch": "i"
+          },
+          "actions": [
+            {
+              "type": "dropStoredScene"
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "o"
+            },
+            "ch": "o"
+          },
+          "actions": [
+            {
+              "type": "returnToStoredScene"
+            }
+          ]
+        },
+        {
+          "keyData": {
+            "key": {
+              "name": "c"
+            },
+            "ch": "c"
+          },
+          "actions": [
+            {
+              "type": "exit"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
