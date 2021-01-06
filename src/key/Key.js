@@ -59,7 +59,7 @@ class Key {
           this.controller.currentState.storeSceneName(this.controller.interface.getCurrentScene())
           break
         }
-        case 'dropCurrentScene': {
+        case 'dropStoredScene': {
           this.controller.currentState.dropSceneName()
           break
         }
