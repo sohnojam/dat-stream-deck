@@ -34,14 +34,14 @@ class OBSS {
     console.log('authentication failed (OBSS)')
   }
 
-  connect() {
+  connect(startStateName) {
     this.socket.connect({
       address: this.address,
       password: this.password,
       secure: false
     })
       .then(() => {
-        this.controller.setState('main')
+        this.controller.setState(startStateName)
       }).catch(error => {
         console.error(error)
       })

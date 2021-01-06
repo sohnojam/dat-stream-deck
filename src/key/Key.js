@@ -24,7 +24,7 @@ class Key {
     this.actions.forEach(action => {
       switch(action.type) {
         case 'connect': {
-          this.controller.interface.connect()
+          this.controller.interface.connect(action.startStateName)
           break
         }
         case 'switchScene': {

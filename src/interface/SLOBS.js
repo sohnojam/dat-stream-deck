@@ -18,11 +18,11 @@ class SLOBS {
 
   }
 
-  handleConnectionOpened() {
+  handleConnectionOpened(startStateName) {
     console.log('connected (SLOBS)')
     this.socket.request('TcpServerService', 'auth', this.token)
       .then(() => {
-        this.handleAuthSuccess()
+        this.handleAuthSuccess(startStateName)
       }).catch(error => {
         this.handleAuthFailure()
       })
@@ -33,9 +33,9 @@ class SLOBS {
     this.controller.setState('init')
   }
 
-  handleAuthSuccess() {
+  handleAuthSuccess(startStateName) {
     console.log('authenticated (SLOBS)')
-    this.controller.setState('main')
+    this.controller.setState(startStateName)
 
     this.sendMessage('ScenesService', 'getScenes').then(scenes => this.scenes = scenes)
     this.sendMessage('AudioService', 'getSources').then(sources => this.sources = sources)
@@ -80,10 +80,10 @@ class SLOBS {
   }
 
 
-  connect() {
+  connect(startStateName) {
     this.socket = new SockJS(this.address)
 
-    this.socket.onopen = () => this.handleConnectionOpened()
+    this.socket.onopen = () => this.handleConnectionOpened(startStateName)
     this.socket.onclose = () => this.handleConnectionClosed()
     this.socket.onmessage = (event) => this.handleMessage(event.data)
   }
