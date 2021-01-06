@@ -1,10 +1,14 @@
+const { Key } = require("../key")
+
 class State {
 
   constructor(controller, name, keys) {
 
     this.controller = controller
     this.name = name
-    this.keys = keys
+    this.keys = keys.map(key => {
+      return new Key(this.controller, key.keyData, key.actions)
+    })
     this.storedSceneName = ''
 
   }
