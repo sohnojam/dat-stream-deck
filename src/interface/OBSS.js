@@ -51,6 +51,13 @@ class OBSS {
       .catch(error => console.error(error))
   }
 
+  getCurrentScene() {
+    this.socket.send('GetCurrentScene')
+      .then(data => {
+        return data ? data.name : ''
+      })
+  }
+
   setSourceMute(sourceName, mute) {
     this.socket.send('SetMute', {source: sourceName, mute: mute})
       .catch(error => console.error(error))

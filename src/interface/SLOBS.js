@@ -95,6 +95,17 @@ class SLOBS {
     this.sendMessage('ScenesService', 'makeSceneActive', iScene.id)
   }
 
+  getCurrentScene() {
+    this.sendMessage('ScenesService', 'activeSceneId')
+      .then(aSceneId => {
+        const aScene = this.scenes.find(scene => scene.id == aSceneId)
+        if (!aScene) {
+          return ''
+        }
+        return aScene.name
+      })
+  }
+
   setSourceMute(sourceName, mute) {
     const iSource = this.sources.find(source => source.name == sourceName)
     if (!iSource) {
