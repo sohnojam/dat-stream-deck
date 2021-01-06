@@ -1,4 +1,4 @@
-const SockJS = require('sockjs')
+const SockJS = require('sockjs-client')
 
 class SLOBS {
 
