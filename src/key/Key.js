@@ -23,6 +23,10 @@ class Key {
 
     this.actions.forEach(action => {
       switch(action.type) {
+        case 'connect': {
+          this.controller.interface.connect()
+          break
+        }
         case 'switchScene': {
           this.controller.interface.switchScene(action.sceneName)
           break
@@ -57,6 +61,10 @@ class Key {
         }
         case 'dropCurrentScene': {
           this.controller.currentState.dropSceneName()
+          break
+        }
+        case 'exit': {
+          this.controller.exit()
           break
         }
       }
