@@ -10,7 +10,7 @@ class Key {
 
   checkKeyData(data) {
     if (
-      (data.key && data.key.name == this.keyData.name)
+      (data.key && data.key.name == this.keyData.key.name)
       ||
       (!data.key && data.ch == this.keyData.ch)
     ) {

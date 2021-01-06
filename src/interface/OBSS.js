@@ -41,7 +41,7 @@ class OBSS {
       secure: false
     })
       .then(() => {
-        this.controller.setState(startStateName)
+        this.controller.switchState(startStateName)
       }).catch(error => {
         console.error(error)
       })

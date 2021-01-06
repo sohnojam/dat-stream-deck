@@ -30,7 +30,7 @@ class SLOBS {
 
   handleConnectionClosed() {
     console.log('disconnected (SLOBS)')
-    this.controller.setState('init')
+    this.controller.switchState('init')
   }
 
   handleAuthSuccess(startStateName) {
