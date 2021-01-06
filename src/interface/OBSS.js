@@ -2,10 +2,11 @@ const OBSWS = require('obs-websocket-js')
 
 class OBSS {
 
-  constructor(controller, config) {
+  constructor(controller, address, password) {
 
     this.controller = controller
-    this.config = config
+    this.address = address
+    this.password = password
 
     this.socket = new OBSWS()
     this.socket.on('ConnectionOpened', (data) => this.handleConnectionOpened(data))
@@ -35,8 +36,8 @@ class OBSS {
 
   connect() {
     this.socket.connect({
-      address: this.config.obss.address,
-      password: this.config.obss.password,
+      address: this.address,
+      password: this.password,
       secure: false
     })
       .then(() => {

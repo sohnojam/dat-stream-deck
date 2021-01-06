@@ -2,10 +2,11 @@ const SockJS = require('sockjs')
 
 class SLOBS {
 
-  constructor(controller, config) {
+  constructor(controller, address, token) {
 
     this.controller = controller
-    this.config = config
+    this.address = address
+    this.token = token
 
     this.socket = null
     this.currentRequestId = 0
@@ -19,7 +20,7 @@ class SLOBS {
 
   handleConnectionOpened() {
     console.log('connected (SLOBS)')
-    this.socket.request('TcpServerService', 'auth', this.config.SLOBS.token)
+    this.socket.request('TcpServerService', 'auth', this.token)
       .then(() => {
         this.handleAuthSuccess()
       }).catch(error => {
@@ -80,7 +81,7 @@ class SLOBS {
 
 
   connect() {
-    this.socket = new SockJS(this.config.SLOBS.address)
+    this.socket = new SockJS(this.address)
 
     this.socket.onopen = () => this.handleConnectionOpened()
     this.socket.onclose = () => this.handleConnectionClosed()
