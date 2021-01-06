@@ -9,7 +9,7 @@ class SLOBS {
     this.token = token
 
     this.socket = null
-    this.currentRequestId = 0
+    this.currentRequestId = 1
 
     this.requests = {}
     
@@ -20,10 +20,11 @@ class SLOBS {
 
   handleConnectionOpened(startStateName) {
     console.log('connected (SLOBS)')
-    this.socket.request('TcpServerService', 'auth', this.token)
+    this.sendMessage('TcpServerService', 'auth', this.token)
       .then(() => {
         this.handleAuthSuccess(startStateName)
       }).catch(error => {
+        console.error(error)
         this.handleAuthFailure()
       })
   }
@@ -35,7 +36,7 @@ class SLOBS {
 
   handleAuthSuccess(startStateName) {
     console.log('authenticated (SLOBS)')
-    this.controller.setState(startStateName)
+    this.controller.switchState(startStateName)
 
     this.sendMessage('ScenesService', 'getScenes').then(scenes => this.scenes = scenes)
     this.sendMessage('AudioService', 'getSources').then(sources => this.sources = sources)
@@ -55,7 +56,7 @@ class SLOBS {
       } else {
         request.resolve(message.result)
       }
-      delete this.request[message.id]
+      delete this.requests[message.id]
     }
   }
 
@@ -65,7 +66,7 @@ class SLOBS {
       jsonepc: '2.0',
       id,
       method: methodName,
-      params: { resource, resourceId, args }
+      params: { resource: resourceId, args }
     }
 
     return new Promise((resolve, reject) => {

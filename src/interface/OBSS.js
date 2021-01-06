@@ -23,7 +23,7 @@ class OBSS {
 
   handleConnectionClosed(data) {
     console.log('disconnected (OBSS)')
-    this.controller.setState('init')
+    this.controller.switchState('init')
   }
 
   handleAuthSuccess(data) {

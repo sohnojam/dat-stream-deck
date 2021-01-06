@@ -39,6 +39,9 @@ class Controller {
   run() {
     keypress(process.stdin)
     process.stdin.on('keypress', (ch, key) => {
+      if (key && key.ctrl && key.name == 'c') {
+        this.exit()
+      }
       if (this.currentState) {
         this.currentState.checkKeys({ch, key})
       }
