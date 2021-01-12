@@ -97,14 +97,14 @@ class SLOBS {
     this.sendMessage('ScenesService', 'makeSceneActive', iScene.id)
   }
 
-  getCurrentScene() {
+  storeCurrentScene(state) {
     this.sendMessage('ScenesService', 'activeSceneId')
       .then(aSceneId => {
         const aScene = this.scenes.find(scene => scene.id == aSceneId)
         if (!aScene) {
           return ''
         }
-        return aScene.name
+        state.storeSceneName(aScene.name)
       })
   }
 

@@ -52,20 +52,22 @@ class OBSS {
       .catch(error => console.error(error))
   }
 
-  getCurrentScene() {
+  storeCurrentScene(state) {
     this.socket.send('GetCurrentScene')
       .then(data => {
+        console.log(data)
+        state.storeSceneName(data.name)
         return data ? data.name : ''
       })
   }
 
   setSourceMute(sourceName, mute) {
-    this.socket.send('SetMute', {source: sourceName, mute: mute})
+    this.socket.send('SetMute', {source: sourceName, mute: mute==='true'})
       .catch(error => console.error(error))
   }
 
-  setSourceVisible(sceneName, sourceName, visible) {
-    this.socket.send('SetSceneItemRender', {'scene-name': sceneName, source: sourceName, render: visible})
+  setSourceVisibility(sceneName, sourceName, visible) {
+    this.socket.send('SetSceneItemRender', {'scene-name': sceneName, source: sourceName, render: visible==='true'})
       .catch(error => console.error(error))
   }
 

@@ -10,7 +10,7 @@ class Key {
 
   checkKeyData(data) {
     if (
-      (data.key && data.key.name == this.keyData.key.name)
+      (data.key && data.key.name && this.keyData.key && this.keyData.key.name && data.key.name == this.keyData.key.name)
       ||
       (!data.key && data.ch == this.keyData.ch)
     ) {
@@ -56,7 +56,7 @@ class Key {
           break
         }
         case 'storeCurrentScene': {
-          this.controller.currentState.storeSceneName(this.controller.interface.getCurrentScene())
+          this.controller.interface.storeCurrentScene(this.controller.currentState)
           break
         }
         case 'dropStoredScene': {

@@ -18,7 +18,7 @@ class Controller {
     this.states = config.states.map(state => {
       return new State(this, state.name, state.keys)
     })
-    this.currentState = this.states.find(state => state.name == config.controller.initStateName)
+    this.currentState = this.states.find(state => state.name == config.controller.startStateName)
 
   }
 
