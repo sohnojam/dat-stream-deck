@@ -113,7 +113,7 @@ class SLOBS {
     if (!iSource) {
       return false
     }
-    this.sendMessage('SourcesService', 'setMuted', iSource.id, mute)
+    this.sendMessage('SourcesService', 'setMuted', iSource.id, mute==='true')
   }
 
   setSourceVisibility(sceneName, sourceName, visible) {
@@ -125,7 +125,7 @@ class SLOBS {
     if (!iSource) {
       return false
     }
-    this.sendMessage(iSource.resourceId, 'setVisibility', visible)
+    this.sendMessage(iSource.resourceId, 'setVisibility', visible==='true')
   }
 
   setTransition(transitionName) {
