@@ -55,7 +55,6 @@ class OBSS {
   storeCurrentScene(state) {
     this.socket.send('GetCurrentScene')
       .then(data => {
-        console.log(data)
         state.storeSceneName(data.name)
         return data ? data.name : ''
       })

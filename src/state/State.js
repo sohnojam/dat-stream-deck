@@ -14,7 +14,6 @@ class State {
   }
 
   storeSceneName(sceneName) {
-    console.log(sceneName)
     if (sceneName) {
       this.storedSceneName = sceneName
     }
