@@ -38,7 +38,7 @@ class OBSS {
     this.socket.connect({
       address: this.address,
       password: this.password,
-      secure: false
+      secure: true
     })
       .then(() => {
         this.controller.switchState(startStateName)
