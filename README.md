@@ -6,7 +6,7 @@ This project is 100% free to use, and 100% free to modify. If you make any chang
 
 ## Guide
 
-Starting from v0.1.1 a full set-up guide will be included in the release download as a PDF. It is currently being worked on, hold tight. Feel free to try to figure it out until then, as no software changes will be made from v0.1.0 other than ease-of-set-up changes, so once that is released no changes will need to be made.
+Starting from v0.1.1 a full set-up guide is included in release packages. It goes over all the preparation, installation, and configuration processes for a setup using OBS Studio and Streamlabs OBS, with dat-stream-deck running on either a Windows machine or a Raspberry Pi.
 
 ## Configurator
 
@@ -14,9 +14,21 @@ https://sohnojam.github.io/dat-stream-deck-configurator
 
 ## Releases
 
+### v0.1.1
+
+Download https://github.com/sohnojam/dat-stream-deck/raw/main/releases/v0.1.1/dat-stream-deck-v0.1.1.zip
+
+Guide https://github.com/sohnojam/dat-stream-deck/raw/main/releases/v0.1.1/dat-stream-deck-guide-v0.1.1.pdf
+
+- Added installation guide to release package
+
+- Added config file auto-updater backbone for future use
+
 ### v0.1.0
 
-https://github.com/sohnojam/dat-stream-deck/raw/main/releases/dat-stream-deck-v0.1.0.zip
+https://github.com/sohnojam/dat-stream-deck/raw/main/releases/v0.1.0/dat-stream-deck-v0.1.0.zip
+
+- Initial release
 
 ## Useful links
 

@@ -1,5 +1,6 @@
-# config file
+# config files
 dsdconfig.json
+dsdconfig*
 
 # VS Code Config
 .vscode

@@ -20,6 +20,8 @@ class Controller {
     })
     this.currentState = this.states.find(state => state.name == config.controller.startStateName)
 
+    console.log('controller initialized')
+
   }
 
   switchState(stateName) {
