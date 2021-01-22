@@ -1,6 +1,6 @@
 # dat-stream-deck
 
-dat-stream-deck is an open-source, easy to set up solution for controlling your stream, through either OBS Studio or Streamlabs OBS, without the need for specialized hardware. All you need is a spare computer, be it an old laptop, an old desktop, or even a Raspberry Pi (this is how I use it), and the willingness to deal with the jank that can't be separated by a project developed by a single person.
+dat-stream-deck is an open-source, easy to set up solution for controlling your stream, through either OBS Studio or Streamlabs OBS, without the need for specialized hardware. All you need is a spare computer, be it an old laptop, an old desktop, or even a Raspberry Pi (this is how I use it), and the willingness to deal with the jank that can't be separated from a project developed by a single person.
 
 This project is 100% free to use, and 100% free to modify. If you make any changes that extend functionality, all I ask is that you contribute to the project by submitting it as a pull request. If you find any issues that you cannot fix yourself, or have an idea for how to improve it and cannot implement it yourself, feel free to submit an issue, and I'll do my best to get to it.
 
