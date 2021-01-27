@@ -3,7 +3,7 @@ const unversioned = require('./unversioned')
 const cv1 = require('./cv1')
 
 function needsUpdate(config) {
-  const currentVersion = 'cv1'
+  const currentVersion = 'cv2'
   return versionChecker(config) !== currentVersion
 }
 
