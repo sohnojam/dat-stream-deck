@@ -9,9 +9,9 @@ class Controller {
 
     this.interface = (
       config.interface.type == 'OBSS' ?
-        new Interface.OBSS(this, config.interface.address, config.interface.password)
+        new Interface.OBSS(this, `${config.interface.address}:${config.interface.port}`, config.interface.password)
       : config.interface.type == 'SLOBS' ?
-        new Interface.SLOBS(this, config.interface.address, config.interface.token)
+        new Interface.SLOBS(this, `http://${config.interface.address}:${config.interface.port}/api`, config.interface.token)
       :
         null
     )
@@ -19,6 +19,7 @@ class Controller {
       return new State(this, state.name, state.keys)
     })
     this.currentState = this.states.find(state => state.name == config.controller.startStateName)
+    this.gtss = null
 
     console.log('controller initialized')
 
@@ -30,6 +31,16 @@ class Controller {
       return false
     }
     this.currentState = iState
+  }
+
+  setGtss(sceneName) {
+    this.gtss = sceneName
+  }
+
+  getGtss() {
+    const gtss = this.gtss
+    this.gtss = null
+    return gtss
   }
 
   exit() {

@@ -63,6 +63,20 @@ class Key {
           this.controller.currentState.dropSceneName()
           break
         }
+        case 'storeGtssFromState': {
+          this.controller.setGtss(this.controller.currentState.storedSceneName)
+          break
+        }
+        case 'storeSceneFromGtss': {
+          this.controller.currentState.storeSceneName(this.controller.getGtss())
+          break
+        }
+        case 'switchStatePassingStoredScene': {
+          const sceneName = this.controller.currentState.storedSceneName
+          this.controller.switchState(action.stateName)
+          this.controller.currentState.storeSceneName(sceneName)
+          break
+        }
         case 'exit': {
           this.controller.exit()
           break
