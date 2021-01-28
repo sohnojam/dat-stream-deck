@@ -20,6 +20,12 @@ https://sohnojam.github.io/dat-stream-deck-configurator
 
 ## Releases
 
+### v0.2.0 (coming soon)
+
+- Config version 2: global temporary scene storage (GTSS) in controller for more versatile state management, under-the-hood changes to interface configuration
+
+- New configurator for improved ease-of-setup and added eyecandy
+
 ### v0.1.1
 
 Download https://github.com/sohnojam/dat-stream-deck/raw/main/releases/v0.1.1/dat-stream-deck-v0.1.1.zip
